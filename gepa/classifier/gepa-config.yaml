@@ -1,0 +1,36 @@
+# Configuration for 03_Advanced_DSPy_Optimizer_GEPA.{ipynb,py}.
+# Edit values here instead of in the notebook so reruns and CI stay reproducible.
+
+models:
+  # Student we want to optimize (cheap / fast).
+  small: gemini/gemini-2.5-flash-lite
+  # Teacher LM GEPA uses to propose new prompts; also used as the upper-bound
+  # reference in the baseline-accuracy section.
+  reflection: gemini/gemini-3.1-pro-preview
+
+dataset:
+  # Explicit paths to the source CSVs. Either may be null, in which case the
+  # notebook falls back to searching ./dataset/ and ./dspy_hackathon/dataset/.
+  # Paths are resolved relative to the directory the notebook/script is run from.
+  train_csv_path: dspy_hackathon/dataset/train.csv
+  test_csv_path: dspy_hackathon/dataset/test.csv
+  # Per-class sampling sizes for the balanced train/val/test splits.
+  # train + val are sampled (disjointly) from train.csv; test is sampled from test.csv.
+  training_samples_per_label: 3
+  val_samples_per_label: 3
+  test_samples_per_label: 10
+
+gepa:
+  # Pre-set budget. One of "light" | "medium" | "heavy" (or pass max_metric_calls instead).
+  auto: light
+  # How many examples to show the reflection LM per prompt-rewrite proposal.
+  # null → defaults to len(train_dataset) at runtime.
+  reflection_minibatch_size: null
+  # Token budget for each reflection-LM call (the teacher that rewrites prompts).
+  reflection_lm_max_tokens: 100000
+  # Parallelism for metric evaluation across candidates.
+  num_threads: 16
+  # RNG seed for reproducibility of GEPA's search.
+  seed: 1
+  # Populate compiled_gepa.detailed_results so the Pareto-frontier plot has data.
+  track_stats: true
