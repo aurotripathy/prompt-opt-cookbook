@@ -49,6 +49,12 @@ def resolve_gemini_model(candidates: Sequence[str], role: str) -> str:
             "GOOGLE_API_KEY not set. Put it in .env at the repo root or export it before running."
         )
 
+    print(
+        f"[model-probe] {role}: probing {len(candidates)} candidate(s) with max_tokens=8 "
+        "(any 'response was truncated' warning below is expected — we only need the call to succeed, "
+        "not the reply text)."
+    )
+
     last_err: Exception | None = None
     for model_id in candidates:
         try:
