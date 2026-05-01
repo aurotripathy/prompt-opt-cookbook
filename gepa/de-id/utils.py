@@ -18,7 +18,7 @@ SMALL_MODEL_CANDIDATES: list[str] = [
     "gemini/gemini-2.0-flash",
 ]
 
-LARGE_MODEL_CANDIDATES: list[str] = [
+REFLECTION_MODEL_CANDIDATES: list[str] = [
     "gemini/gemini-3.1-pro-preview",
     "gemini/gemini-2.5-pro",
     "gemini/gemini-1.5-pro",
@@ -69,6 +69,6 @@ def resolve_gemini_model(candidates: Sequence[str], role: str) -> str:
 
 __all__ = [
     "SMALL_MODEL_CANDIDATES",
-    "LARGE_MODEL_CANDIDATES",
+    "REFLECTION_MODEL_CANDIDATES",
     "resolve_gemini_model",
 ]

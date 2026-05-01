@@ -89,7 +89,7 @@ from pandas import StringDtype
 from tqdm.auto import tqdm
 
 from utils import (
-    LARGE_MODEL_CANDIDATES,
+    REFLECTION_MODEL_CANDIDATES,
     SMALL_MODEL_CANDIDATES,
     resolve_gemini_model,
 )
@@ -100,7 +100,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 # Preview models (e.g. "gemini-3.1-pro-preview") may 404 on v1alpha if your API key lacks preview
 # access. The helper below probes each candidate and returns the first that actually responds.
 small_model = resolve_gemini_model(SMALL_MODEL_CANDIDATES, role="small_model")
-large_model = resolve_gemini_model(LARGE_MODEL_CANDIDATES, role="large_model")
+large_model = resolve_gemini_model(REFLECTION_MODEL_CANDIDATES, role="large_model")
 reflection_model = large_model
 
 
