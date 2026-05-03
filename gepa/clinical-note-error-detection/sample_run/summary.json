@@ -1,0 +1,100 @@
+{
+  "timestamp": "2026_05_02-2107",
+  "run_dir": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l",
+  "preset": "gemini-2.5-flash-lite",
+  "reflector_preset": "gemini-3.1-pro-preview",
+  "seed": 42,
+  "runs": 1,
+  "train_csv": "data/MEDEC/MEDEC-MS/MEDEC-Full-TrainingSet-with-ErrorType.csv",
+  "val_csv": "data/MEDEC/MEDEC-MS/MEDEC-MS-ValidationSet-with-GroundTruth-and-ErrorType.csv",
+  "lm_info": {
+    "provider": "gemini",
+    "model": "gemini-2.5-flash-lite",
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": null,
+    "min_p": null,
+    "max_tokens": 32768,
+    "seed": null,
+    "port": null,
+    "num_retries": 8,
+    "cache": false
+  },
+  "reflector_info": {
+    "provider": "gemini",
+    "model": "gemini-3.1-pro-preview",
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "top_k": null,
+    "min_p": null,
+    "max_tokens": 32768,
+    "seed": null,
+    "port": null,
+    "num_retries": 8,
+    "cache": false
+  },
+  "gepa_train_size": 100,
+  "gepa_pareto_size": 25,
+  "baseline": {
+    "error_flag_accuracy": 0.52,
+    "binary_metrics": {
+      "accuracy": 0.52,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "specificity": 0.07692307692307693,
+      "fpr": 0.9230769230769231,
+      "balanced_accuracy": 0.5384615384615384,
+      "mcc": 0.19611613513818402
+    },
+    "outputs": {
+      "predictions_csv": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/baseline_val_predictions.csv",
+      "metrics_csv": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/baseline_val_metrics_per_example.csv",
+      "metrics_json": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/baseline_val_metrics_overall.json",
+      "metrics_by_type_csv": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/baseline_val_metrics_by_error_type.csv",
+      "metrics_by_type_json": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/baseline_val_metrics_by_error_type.json",
+      "confusion_png": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/baseline_val_confusion.png",
+      "confusion_pdf": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/baseline_val_confusion.pdf"
+    }
+  },
+  "optimised": {
+    "per_run": [
+      {
+        "run": 1,
+        "seed": 42,
+        "error_flag_accuracy": 0.6,
+        "precision": 0.5555555555555556,
+        "recall": 0.8333333333333334,
+        "f1": 0.6666666666666667,
+        "balanced_accuracy": 0.608974358974359,
+        "mcc": 0.24251094575618398,
+        "confusion_counts": {
+          "tp": 10,
+          "fp": 8,
+          "tn": 5,
+          "fn": 2
+        }
+      }
+    ],
+    "mean_error_flag_accuracy": 0.6,
+    "std_error_flag_accuracy": 0.0,
+    "outputs_last_run": {
+      "predictions_csv": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/rep1/optimised_rep1_val_predictions.csv",
+      "metrics_csv": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/rep1/optimised_rep1_val_metrics_per_example.csv",
+      "metrics_json": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/rep1/optimised_rep1_val_metrics_overall.json",
+      "metrics_by_type_csv": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/rep1/optimised_rep1_val_metrics_by_error_type.csv",
+      "metrics_by_type_json": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/rep1/optimised_rep1_val_metrics_by_error_type.json",
+      "confusion_png": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/rep1/optimised_rep1_val_confusion.png",
+      "confusion_pdf": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/rep1/optimised_rep1_val_confusion.pdf"
+    }
+  },
+  "gepa_budget": {
+    "auto": "light",
+    "max_metric_calls": 480,
+    "max_full_evals": 3.84,
+    "actual_metric_calls": 498,
+    "actual_full_evals": 3.984,
+    "actual_full_val_evals": 15,
+    "log_dir": "results/gepa_gemini_smoke/gepa_detect_gemini-gemini-2.5-flash-lite_ref-gemini-gemini-3.1-pro-preview_seed42_2026_05_02-2107_xjf5l/gepa_log"
+  }
+}

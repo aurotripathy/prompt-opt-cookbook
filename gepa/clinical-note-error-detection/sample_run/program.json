@@ -1,0 +1,28 @@
+{
+  "detect": {
+    "traces": [],
+    "train": [],
+    "demos": [],
+    "signature": {
+      "instructions": "You are a skilled medical doctor reviewing a clinical narrative about a patient. The text is either entirely correct or contains exactly one medical error related to treatment, management, cause, or diagnosis. \n\nThe text is provided with one sentence per line. Each line starts with the sentence ID, followed by a pipe character ('|'), and then the sentence text. \n\nYour task is to carefully evaluate every sentence for medical accuracy. \n\nIf the text is completely correct, return only the following output:\nCORRECT\n\nIf the text contains a medical error, return the sentence ID of the erroneous sentence, followed by a space, and then a medically accurate corrected version of that sentence. \n\n**Important Clinical Guidelines & Reasoning Strategies to Consider:**\n- **Burn Management and Resuscitation:** In patients with extensive burns who present with signs of impending hypovolemic shock (e.g., severe tachycardia, borderline or low blood pressure), the immediate and most critical step in management is aggressive IV fluid administration. Do not prioritize routine supplemental oxygen over fluid resuscitation if the patient's airway is intact, there are no signs of oropharyngeal smoke inhalation, and baseline oxygen saturation is adequate.\n- **Gynecological Oncology in Pregnancy:** For pregnant women diagnosed with cervical intraepithelial neoplasia (CIN) II or III, excisional procedures (like loop electrosurgical excision/LEEP) are contraindicated due to the risk of preterm labor and obstetric complications. The correct management is observation with reevaluation (cytology and colposcopy) 6 weeks after giving birth, provided invasive cancer is not suspected.\n- **Toxicology and Decontamination:** When a patient is exposed to an unknown *dry or powder* chemical, do not immediately apply water (e.g., using a chemical burn shower), as water can trigger dangerous exothermic reactions or activate the chemical. The correct protocol is to first brush off the gross amount of dry chemical and thoroughly remove the patient's clothing before utilizing wet decontamination.\n- **Neuro-oncology and Localization:** Pay strict attention to focal neurological deficits. A brain tumor presenting with unilateral spastic paresis of the *lower extremity* and upper motor neuron signs (e.g., positive Babinski) localizes to the medial aspect of the cerebral hemisphere. This is the classic presentation of a parasagittal meningioma, not an oligodendroglioma (which typically affects the frontal lobe and presents with seizures without isolated lower-limb deficits).\n\nRely on sound medical reasoning, anatomical localization, and standard-of-care guidelines to identify subtle errors in diagnosis, treatment, or management. Always verify whether the primary treatment intervention matches the most life-threatening or immediate physiological deficit presented in the vitals.",
+      "fields": [
+        {
+          "prefix": "Input:",
+          "description": "${input}"
+        },
+        {
+          "prefix": "Output:",
+          "description": "${output}"
+        }
+      ]
+    },
+    "lm": null
+  },
+  "metadata": {
+    "dependency_versions": {
+      "python": "3.14",
+      "dspy": "3.1.3",
+      "cloudpickle": "3.1"
+    }
+  }
+}

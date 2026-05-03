@@ -1,0 +1,26 @@
+{
+  "error_flag_accuracy": 0.6,
+  "error_sentence_accuracy": 0.44,
+  "error_sentence_accuracy_strict": 0.2,
+  "binary_metrics": {
+    "accuracy": 0.6,
+    "precision": 0.5555555555555556,
+    "recall": 0.8333333333333334,
+    "f1": 0.6666666666666667,
+    "specificity": 0.38461538461538464,
+    "fpr": 0.6153846153846154,
+    "balanced_accuracy": 0.608974358974359,
+    "mcc": 0.24251094575618398
+  },
+  "confusion_counts": {
+    "tp": 10,
+    "fp": 8,
+    "tn": 5,
+    "fn": 2
+  },
+  "totals": {
+    "n": 25,
+    "n_errors": 12,
+    "n_correct": 13
+  }
+}

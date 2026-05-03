@@ -207,6 +207,17 @@ The plot has two curves on a shared y-axis (aggregate valset score, 0–1):
 
 The top axis is annotated with **cumulative metric calls at discovery**, so you can read cost-vs-quality directly: a sharp jump in green for a small bump on the top axis = high marginal value per LLM call; a long flat plateau = candidates that consume budget without moving the front.
 
+## Sample run
+
+A small worked example is committed under [`sample_run/`](./sample_run/) so the repo is browsable without spending API credits to reproduce it. It contains a curated subset of one Gemini 2.5 Flash Lite × 3.1 Pro reflector smoke run on a 25-example validation slice:
+
+- the optimised prompt (`program.json`) and run manifest (`summary.json`),
+- baseline and optimised overall metrics (`*_val_metrics_overall.json`),
+- baseline and optimised confusion-matrix PNGs,
+- the `pareto_evolution_score.png` produced by `src/plot_pareto_front.py`.
+
+See [`sample_run/README.md`](./sample_run/README.md) for the full configuration, headline numbers (baseline 0.520 → optimised 0.600 error-flag accuracy), and a one-paragraph qualitative read on what GEPA changed about the prompt. This is illustrative only — for the headline benchmark numbers, see the [paper](https://arxiv.org/abs/2602.22483).
+
 ## Supported Models
 
 
