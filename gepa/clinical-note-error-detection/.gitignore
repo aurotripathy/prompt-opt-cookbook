@@ -1,0 +1,115 @@
+# ---------------------------------------------------------------------------
+# Secrets / local env
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+# API keys / credentials people sometimes drop next to the code
+*.pem
+*.key
+credentials.json
+service-account*.json
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Plotting / matplotlib cache (created locally by plot_pareto_front.py etc.)
+# ---------------------------------------------------------------------------
+.mpl-cache/
+
+# ---------------------------------------------------------------------------
+# Datasets (cloned externally; not committed to this fork)
+#   - MEDEC is fetched from https://github.com/abachaa/MEDEC
+#   - See README.md "Setup" for clone instructions.
+# ---------------------------------------------------------------------------
+data/
+MEDEC/
+
+# ---------------------------------------------------------------------------
+# Run outputs (GEPA optimisation runs, baseline evals, plots, logs)
+# ---------------------------------------------------------------------------
+results/
+runs/
+outputs/
+wandb/
+mlruns/
+mlflow.db
+mlflow.db-journal
+
+# DSPy / LiteLLM caches
+.dspy_cache/
+.litellm_cache/
+
+# GEPA stray artefacts
+compiled_gepa_*.json
+gepa_*_history.json
+gepa_state.bin
+
+# SLURM job outputs
+slurm-*.out
+slurm-*.err
+*.slurm.log
+
+# ---------------------------------------------------------------------------
+# Accidental detritus from misquoted shell commands
+#   (e.g. a stray `python > python` or `touch --auto` that creates files
+#   literally named `--auto`, `--preset`, `python`, etc.)
+# ---------------------------------------------------------------------------
+/python
+/--auto
+/--limit-train
+/--limit-val
+/--limit-eval
+/--output-dir
+/--preset
+/--reflector-preset
+/--val-csv
+/--eval-csv
+
+# ---------------------------------------------------------------------------
+# IDE / OS
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

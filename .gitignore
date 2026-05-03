@@ -25,6 +25,9 @@ gepa/classifier/dataset/train.csv
 gepa/classifier/dataset/test.csv
 gepa/classifier/dataset/arxiv_paper_attention.txt
 
+# MEDEC dataset (cloned locally; not committed)
+gepa/clinical-note-error-detection/data/
+
 # IDE / OS
 .DS_Store
 .vscode/
